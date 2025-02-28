@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practicing JS/Dom Interface</title>
+</head>
+<body>
+    <h1 id="myHeading"></h1>
+    <p>The cental of Mary Shelley's Frainkenstine is clearly laid out in the forst few pages of the text(1).</p>
+
+    <p id="newPara"></p>
+    
+</body>
+
+<script>
+    var  header = document.getElementById("myHeading");
+    header.innerHTML = "My essay on Frankenstein";
+
+
+    // appendChild()
+    var footNote = document.createElement("p");
+    footNote.innerHTML = "1. From page 5 of <i>Frankenstein</i>";
+    // add the child
+    document.body.appendChild(footNote)
+
+    // add another paragraph
+    var para = document.getElementById("newPara");
+    para.innerHTML = "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Exercitationem, obcaecati unde recusandae nisi asperiores dignissimos, adipisci culpa ipsam dolorum laudantium illo, voluptatem commodi rerum tenetur odio? Quis ipsam pariatur quisquam(2).";
+
+    // add another footnote at the end of the page
+    var footNote2 = document.createElement("p");
+    footNote2.innerHTML = "2. Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti amet obcaecati tenetur distinctio iure nihil blanditiis commodi optio eum, aliquam asperiores a inventore esse perspiciatis? Expedita autem ea ducimus ipsum!";
+    document.body.appendChild(footNote2)
+
+    // use insetBefore()
+    var subTitle = document.createElement("h2");
+    subTitle.innerHTML = "This is my Sub Title"; 
+
+    // capture the element we want to add to our h2 before
+    //see newPara variable above
+document.body.insertBefore(subTitle, newPara);
+    
+</script>
+</html>
