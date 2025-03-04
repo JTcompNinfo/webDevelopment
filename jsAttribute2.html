@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>.(attribute) ve setAttribute</title>
+</head>
+<body>
+    <h1>.(attribute) ve setAttribute</h1>
+
+    <p id="crash">
+        Inspect the p tags to see how using . notation is diffrent than setAttribute.
+    </p>
+
+    <p id="something">
+        Another paragraph
+    </p>
+</body>
+<script>
+    var paragraph = document.getElementById("crash");
+    /* 
+    this won't work cuz font-size needs to be writen as fontSize
+    notice that error caises the entire script to crash
+    cpmmeting it ouy will let the js to work
+    */
+   // paragraph.sytle.fontSize = "50px";
+
+   //if we use setAttribut with the wrong noation will not crash
+   paragraph.setAttribute("style", "font-size: 50px");
+
+   var para2 = document.getElementById("something");
+
+   /*
+        we can change the style using .annotation becuse it is a standard attribut pf p elements*/
+        para2.style.color = "red";
+        para2.style.fontSize = "25px";
+
+        //This will not create an atribute sp,ething with the value "this won't work"
+        //becuse something isn't a standard in p tags
+       //para2.something = "This won't work";
+
+       para2.setAttribute("something", "this will work")
+
+</script>
+</html>

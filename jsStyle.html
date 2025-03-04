@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styling with JavaScript</title>
+    <style type="text/css">
+        .footNote {
+            font-size: 7px;
+            font-style: italic;
+            color:#900
+        }
+    </style>
+</head>
+<body>
+    <h1>My Essay on Frankenstine</h1>
+    <p>The cental of Mary Shelley's Frainkenstine is clearly laid out in the forst few pages of the text(1).</p>
+</body>
+<script>
+    var footNote = document.createElement("p");
+    footNote.innerHTML = "1. From page 5 of <i>Frankenstein</i>";
+    // We can set atruibest directly by using style atrube
+
+    footNote.setAttribute("style", "font-size: 7px");
+    document.body.appendChild(footNote)
+
+    var footNote2 = document.createElement("p");
+    footNote2.innerHTML = "2. From oage 4 of Frankenstein";
+    footNote2.setAttribute("class", "footNote");
+    document.body.appendChild(footNote2);
+</script>
+</html>
