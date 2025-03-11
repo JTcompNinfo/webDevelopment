@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JaveScript Keyboard with Key Events (WORDS)</title>
+    <style>
+        #textbox {
+            border: 1px dotted green;
+            height: 200px;
+            width: 80%;
+            margin: 20px;
+
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h3>Updated Keyboard with Key Events</h3>
+    <p>type using your Keyboard to see text displayin the div!
+        <br>Make sure to click the div <i>before</i> trying to type!
+    </p>
+
+    <div id="textbox"></div>
+
+    <script>
+    document.body.addEventListener("keydown", makeText)
+
+    function makeText(e) {
+        var div = document.getElementById("textbox");
+
+        //Use this to prevent event shift from being orinted in the text box
+        //Clicking shift and a key will add the shifted key cuz the event is BOTH keys
+        //Try click Caps Lock - whta happens? How can we prevent that?
+        if (e.key != "Shift") {
+            var keyText = e.key;
+            var text = div.innerHTML;
+            text += keyText;
+            div.innerHTML = text; 
+        }
+    }
+    </script>
+</body>
+</html>
