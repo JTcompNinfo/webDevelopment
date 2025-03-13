@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Changing colors</title>
+    <style>
+        #textbox {
+            border: 1px solid black;
+            height: 100px;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div id="textbox"></div>
+    <h3>Click the box to stop the color from changing!</h3>
+</body>
+<script>
+    var box = document.getElementById("textbox");
+
+    // On click the color stops
+    box.addEventListener("click", stopColor);
+
+
+    // set timmer for 100 milliseconds
+
+    var timer = setInterval(colorSwap, 100);
+
+    function colorSwap() {
+        if(box.style.backgroundColor == "red") {
+            box.style.backgroundColor = "blue";
+        } else {
+            box.style.backgroundColor = "red";
+        }
+    }
+
+    //clear timmer when this function is done
+    function stopColor() {
+        clearInterval(timer);
+    }
+</script>
+</html>
