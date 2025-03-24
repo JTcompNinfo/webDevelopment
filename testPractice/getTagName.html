@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementsByTagName</title>
+</head>
+<body>
+    <h3>Use JS to change the text color of all 3 p elements</h3>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+</body>
+<script>
+    var paragraph = document.getElementsByTagName('p');
+    console.log(paragraph);
+
+    for(var i = 0 ; i < paragraph.length; i++) {
+        paragraph[i].style.color = "red";
+    }
+</script>
+</html>
