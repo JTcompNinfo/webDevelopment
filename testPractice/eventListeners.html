@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS eventlListener</title>
+</head>
+<body>
+    <button id="clickMe">Click Me!</button>
+
+    <button id="btn" onclick="showMessage()">Now Click Me</button>
+</body>
+<script>
+    document.getElementById("clickMe").addEventListener('click', function() {
+        alert('Button Clicked');
+    })
+
+    function showMessage() {
+        alert("Hello From the second button")
+    }
+</script>
+</html>

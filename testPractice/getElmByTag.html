@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS getElementsByTagName</title>
+</head>
+<body>
+    <p>First Paragraph</p> <!--Index 0 -->
+    <p>Second Paragraph</p> <!-- Index 1 -->
+    <p>Third Paragraph</p> <!-- Index 2 -->
+
+    <script>
+        var p = document.getElementsByTagName('p');
+
+        /* The line above cerates a list of all p tags in the document, you can navigate trhoug p tags by refering the index of the list*/
+
+        p[1].style.backgroundColor = "orange";
+        p[2].style.fontSize = "4em"
+
+        for (var paras of p) {
+            paras.style.color = "goldenrod"
+            paras.style.fontWeight = "bold"
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS animation</title>
+    <style>
+        #grow {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+    <p id="grow">WORDS ARE COOL</p>
+    <script>
+        var text = document.getElementById("grow");
+    
+    var size = 10
+        // set timmer to call the funtion every 200 milliseconds
+        var timmer = setInterval(expand, 1000);
+    
+    
+        function expand() {
+            text.style.fontSize = size + "px";
+            size = size + 2;
+    
+            if (size == 20) {
+                clearInterval(timmer);
+            }
+        }
+        </script>
+</body>
+</html>
