@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using JSON</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"> </script>
+</head>
+<body>
+    <h2>Open the console to see how JSON can be used to store and retrueve list data!</h2>
+
+    <script>
+        var listOfScores = [10, 30, 455, 80];
+
+        console.log("Without JSON:");
+        localStorage.setItem("scores", listOfScores);
+        console.log("Values stored in 'scores': " + localStorage.scores);
+        console.log("Data type of localStorage listOfScores: " + typeof(localStorage.scores));
+        console.log("Second item of the localStorage listOfScores: " + localStorage.scores[1]);
+
+        //Now ising JSON
+
+        localStorage.setItem("scores", JSON.stringify(listOfScores));
+        console.log("With JSON:");
+        console.log("Values stored in 'scores': " + localStorage.scores);
+        console.log("Data type of localStorage listOfScores: " + typeof(localStorage.scores));
+        console.log("Second item of the localStorage listOfScores: " + localStorage.scores[1]);
+    </script>
+</body>
+</html>
